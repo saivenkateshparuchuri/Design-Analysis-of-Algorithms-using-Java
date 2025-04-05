@@ -1,19 +1,12 @@
 import java.util.*;
 class BinarySearch {
-    // Recursive binary search function
     static int binarySearch(int arr[], int beg, int end, int val) {
         if (end >= beg) {
             int mid = beg + (end - beg) / 2;
-
-            // If element is present at the middle
             if (arr[mid] == val)
                 return mid;
-
-            // If element is smaller than mid, search left subarray
             if (arr[mid] < val)
                 return binarySearch(arr, mid + 1, end, val);
-
-            // If element is greater than mid, search right subarray
             return binarySearch(arr, beg, mid - 1, val);
         }
         return -1; // Element not found
